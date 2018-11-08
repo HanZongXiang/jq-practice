@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            overflow-y: scroll;
+        }
+        .content {
+            /* position: relative; */
+            width: 200px;
+            height: 1000px;
+        }
+        .container {
+            position: absolute;
+            top: 400px;
+            left: 50px;
+            width: 200px;
+            height: 200px;
+            margin: 100px;
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="content">
+            <p>标签内容1</p>
+            <p>标签内容2</p>
+            <p>标签内容3</p>
+            <p>标签内容4</p>
+            <p>标签内容5</p>
+            <p>标签内容6</p>
+            <p>标签内容7</p>
+            <p>标签内容8</p>
+            <p>标签内容9</p>
+            <p>标签内容10</p>
+            <p>标签内容11</p>
+            <p>标签内容12</p>
+            <p>标签内容13</p>
+            <p>标签内容14</p>
+            <p>标签内容15</p>
+            <p>标签内容16</p>
+            <p>标签内容17</p>
+            <p>标签内容18</p>
+            <p>标签内容19</p>
+            <p>标签内容20</p>
+        </div>
+        <div class="container">
+        
+        </div>
+    </div>
+    <button>回顶部</button>
+    
+</body>
+<script src="./jQuery.js"></script>
+<script>
+    $('.box').scroll(function() {
+        console.log($(this).scrollTop())
+    })
+    $('button').click(function() {
+        $('.box').scrollTop(0)
+        // console.log(document.querySelector('.container').offsetTop, 
+        //     document.querySelector('.container').offsetLeft)
+        console.log($('.container').offset().top)
+        console.log($('.container').offset().left)
+        console.log($('.container').position().top)
+        console.log($('.container').position().left)
+    })
+</script>
+</html>

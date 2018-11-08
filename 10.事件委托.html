@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button id="btn">添加</button>
+    <ul class="box">
+        <li>俺是内容</li>
+    </ul>
+</body>
+<script src="./jQuery.js"></script>
+<script>
+    // let input = document.querySelector('#input')
+    // let btn = document.querySelector('#btn')
+    // let ul = document.querySelector('.box')
+    // let lis = Array.from(document.querySelectorAll('li'))
+
+    // btn.onclick = function() {
+    //     let value = input.value
+    //     let li = document.createElement('li')
+    //     li.onclick = function() {
+    //         alert(this.innerText)
+    //     }
+    //     li.innerText = value
+    //     ul.appendChild(li)
+    //     input.value = ''
+    // }
+
+    // lis.forEach(item => {
+    //     item.onclick = function() {
+    //         alert(this.innerText)
+    //     }
+    // })
+</script>
+<script>
+    $('#btn').click(function() {
+        // let li = $('<li></li>')
+        // li.html($('#input').val())
+        // li.appendTo($('.box'))
+        // $('#input').val('')
+        let value = $('#input').val()
+        $('.box').append(`<li>${value}</li>`)
+        $('#input').val('')
+    })
+    // $('.box').click(function(event) {
+    //     console.log(event)
+    //     // if (event.target.nodeName == 'LI') {
+    //     //     alert(event.target.innerText)
+    //     // }
+    //     if (event.target.localName == 'li') {
+    //         alert(event.target.innerHTML)
+    //     }
+    // })
+    $('.box').on('click','li',function() {
+        alert($(this).text())
+    })
+</script>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+    <script>
+        // window.addEventListener('DOMContentLoaded', function() {
+        //     console.log(document.querySelector('.box'))
+        // })
+        $(function() {
+            $('button:eq(0)').click(function() {
+                $('.box').css({
+                    width: 200,
+                    height: 200,
+                    background: '#f00'
+                })
+            })
+            $('button:eq(1)').click(function() {
+                // alert($('.box').css('background-color'))
+                let box = document.querySelector('.box')
+                alert(getComputedStyle(box).height)
+            })
+            $('button:eq(2)').click(function() {
+                $('.box').attr('title','shanlvbi')
+            })
+            $('button:eq(3)').click(function() {
+                alert($('.box').attr('title'))
+            })
+            $('button:eq(4)').click(function() {
+                $('.box').animate({width: 500},2000).animate({height: 500},2000,function() {
+                    $(this).css({background: '#ff0'})
+                })
+            })
+            function go() {
+                $('.box').animate({width: 100},2000,'swing')
+                    .animate({width: 500}, 2000,'swing', go)
+            }
+            $('button:eq(5)').click(function() {
+                go()
+            })
+            $('button:eq(6)').click(function() {
+                $(':animated').css({background: '#ff0'})
+            })
+            $(':root').css('border','1px solid #000')
+            $('.box').filter(function(index) {
+                if(index == 0) {
+                    return true
+                }
+            }).css({width: 100,height: 100,border: '1px solid #000'})
+            $('.box').slice(1,3).css({ width: 100, height: 100, background: "#f00"})
+            console.log($('.box').filter('[title]').is('[title]'))
+            $('.box').filter('[title]').css('border', '1px solid #000')
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <div class="box">
+    
+    </div>
+    <div class="box" title="title">
+    
+    </div>
+    <button>修改</button>
+    <button>访问</button>
+    <button>属性</button>
+    <button>访问属性</button>
+    <button>动画</button>
+    <button>动画</button>
+    <button>正在动画</button>
+</body>
+</html>

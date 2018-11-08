@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 200px;
+            margin: 50px;
+            height: 200px;
+            background: gold;
+            border: 1px solid #f00;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+<script src="./jQuery.js"></script>
+<script>
+    // $('.box').css({
+    //     backgroundColor: '#f00',
+    //     border: '1px solid #000'
+    // })
+    //     .width(200)
+    //     .height(200)
+    console.log('盒子的宽度：' + $('.box').width())
+    console.log('盒子的高度：' + $('.box').height())
+    console.log('盒子的宽度加内边距：' + $('.box').innerWidth())
+    console.log('盒子的高度加内边距：' + $('.box').innerHeight())
+    console.log('盒子的宽度加内边距加边框：' + $('.box').outerWidth())
+    console.log('盒子的宽度加内外边距加边框：' + $('.box').outerWidth(true))
+    //盒子的宽度：200
+    //盒子的高度：200
+    //盒子的宽度加内边距：200
+    //盒子的高度加内边距：200
+    //盒子的宽度加内边距加边框：202
+    //盒子的宽度加内外边距加边框：302
+</script>
+</html>

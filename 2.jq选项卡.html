@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 150px auto;
+            width: 450px;
+            height: 400px;
+            border: 1px solid #000;
+        }
+        ul {
+            list-style: none;
+            width: 450px;
+            height: 100px;
+        }
+        ul.container-top {
+            display: flex;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        .container-top>li {
+            width: 149px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            border-right: 1px solid #333;
+        }
+        .container-bottom>li {
+            display: none;
+        }
+        .container-top>li.active {
+            background: #ff6700;
+            color: #fff;
+        }
+        .container-bottom>li.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="container-top">
+            <li class="active">财经</li>
+            <li>金融</li>
+            <li style="border: none;padding-right: 1px">商业</li>
+        </ul>
+        <ul class="container-bottom">
+            <li class="active">不落青云，不斩无名1</li>
+            <li>不落青云，不斩无名2</li>
+            <li>不落青云，不斩无名3</li>
+        </ul>
+    </div>
+</body>
+<script src="./jQuery.js"></script>
+<script>
+    $('.container-top>li').click(function() {
+        let index = $(this).index()
+        $(this).addClass('active').siblings().removeClass('active')
+        $('.container-bottom>li').eq(index).addClass('active').siblings().removeClass('active')
+    })
+</script>
+</html>

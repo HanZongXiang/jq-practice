@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <button>隐藏</button>
+    <button>显示</button>
+    <button>切换</button>
+    <button>切换透明度到</button>
+    <input type="text" id="input">
+</body>
+<script src="./jQuery.js"></script>
+<script>
+    // $('button:eq(0)').click(function() {
+    //     $('div').hide(2000,'swing').show(2000).stop().hide(1000)
+    // })
+    // $('button:eq(1)').click(function () {
+    //     $('div').show(2000, 'swing')
+    // })
+    // $('button:eq(2)').click(function () {
+    //     $('div').stop().toggle(2000, 'swing')
+    // })
+    // $('button:eq(0)').click(function() {
+    //     $('div').slideUp(1000)
+    // })
+    // $('button:eq(1)').click(function () {
+    //     $('div').slideDown(1000)
+    // })
+    // $('button:eq(2)').click(function () {
+    //     $('div').slideToggle(1000)
+    // })
+    $('button:eq(0)').click(function () {
+        $('div').fadeOut(1000)
+    })
+    $('button:eq(1)').click(function () {
+        $('div').fadeIn(1000)
+    })
+    $('button:eq(2)').click(function () {
+        $('div').fadeToggle(1000)
+    })
+    $('button:eq(3)').click(function (e) {
+        console.log(e)
+        let fadeNumber = $('#input').val()
+        $('div').fadeTo(1000,fadeNumber)
+    })
+</script>
+</html>
